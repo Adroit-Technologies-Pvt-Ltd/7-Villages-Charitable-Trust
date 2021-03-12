@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Forms</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html"><span>OAS2</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html">About</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1> <span>Enter your Personal Details</span></h1>
+
+          </div>
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+    <!-- form header -->
+    <div class="form-header">
+    </div>
+    <!-- form body -->
+    <div class="form-body">
+    <!-- Name and Phnnumber -->
+
+    <div class="horizontal-group">
+        <div class="form-group left">
+            <label for="name" class="label-title">Name *</label>
+            <input type="text" id="name" class="form-input" name="name" placeholder="enter your first name" required="required" />
+        </div>
+        <div class="form-group right">
+            <label for="phonenumber" class="label-title">Phone Number *</label>
+            <input type="tel" id="phonenumber" class="form-input" name="phonenumber" placeholder="enter your phone number" required="required" />
+        </div>
+    </div>
+    <!-- DOB and blood group -->
+<div class="horizontal-group">
+    <div class="form-group left">
+        <label for="dob" class="label-title">Date of birth</label>
+         <input type="date"  class="form-input" id="dob" name="dob" placeholder="enter your password again"  />
+    </div>
+    <div class="form-group right">
+        <label for="bloodgroup" class="label-title">Blood Group</label><br>
+
+        <select id="bloodgroup" class="form-input" name="bloodgroup" placeholder="enter your password again">
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+  </select>
+    </div>
+</div>
+
+<!--Qualification and Occupation-->
+<div class="horizontal-group">
+    <div class="form-group left">
+        <label for="qualification" class="label-title"> Educational Qualification *</label>
+       <select id="qualification" class="form-input" name="qualification" placeholder="Select your Qualification" required="required">
+    <option value="Schooling">Schooling</option>
+    <option value="High School">High School(10th)</option>
+    <option value="Higher Secondary School">Higher Secondary School(12th)</option>
+    <option value="Bachelors degree">Bachelors degree</option>
+    <option value="Masters degree">Masters degree</option>
+    <option value="Nil">NIL</option>
+  </select>
+    </div>
+    <div class="form-group right">
+        <label for="occupation" class="label-title">Occupation *</label>
+        <input type="text" id="occupation" class="form-input" name="occupation" placeholder="Enter your occupation" required="required" />
+
+    </div>
+</div>
+<!-- Gender and Adhar Number -->
+
+
+<div class="horizontal-group">
+    <div class="form-group left">
+        <label class="label-title">Gender:</label>
+        <div class="input-group">
+            <label for="male"> <input type="radio" name="gender" value="male" id="male" /> Male</label>
+            <label for="female"> <input type="radio" name="gender" value="female" id="female" /> Female</label>
+            <label for="Others"> <input type="radio" name="gender" value="others" id="others" /> Others</label>
+        </div>
+    </div>
+
+    <div class="form-group right">
+        <label class="label-title">Adhar Number</label>
+        <input type="text" id="adharnumber" class="form-input" name="adharnumber" placeholder="Enter your Adhar Number" />
+    </div>
+</div>
+<!-- Father Name and Mother Name -->
+    <div class="horizontal-group">
+        <div class="form-group left">
+
+            <label for="fathersname" class="label-title">Father Name *</label>
+            <input type="text" id="fathersname" class="form-input" name="fathersname" placeholder="Enter your Father's Name" required="required" />
+        </div>
+        <div class="form-group right">
+            <label for="mothersname" class="label-title">Mother Name *</label>
+            <input type="text" id="mothersname" class="form-input" name="mothersname" placeholder="Enter your Mother's Name" required="required" />
+        </div>
+    </div>
+	<!--Spouse and children-->
+<div class="horizontal-group">
+    <div class="form-group left">
+        <label for="squalification" class="label-title">Spouse Name</label>
+		<input type="text" id="spousename" class="form-input" name="spousename" placeholder="Enter your Spouse's Name"  />
+    </div>
+    <div class="form-group right">
+        <label class="label-title">Do u have Children:</label>
+        <div class="input-group">
+            <label for="no"> <input type="radio" name="child" value="nochild" id="nochild" />No</label>
+            <label for="yes"> <input type="radio" name="child" value="yeschild" id="yeschild" />Yes</label>
+    </div>
+</div>
+    <!--Qualification and Occupation of spouse-->
+<div class="horizontal-group">
+    <div class="form-group left">
+        <label for="squalification" class="label-title">Spouse Educational Qualification </label>
+       <select id="squalification" class="form-input" name="squalification" placeholder="Select your Qualification" required="required">
+    <option value="Schooling">Schooling</option>
+    <option value="High School">High School(10th)</option>
+    <option value="Higher Secondary School">Higher Secondary School(12th)</option>
+    <option value="Bachelors degree">Bachelors degree</option>
+    <option value="Masters degree">Masters degree</option>
+    <option value="Nil">NIL</option>
+  </select>
+    </div>
+    <div class="form-group right">
+        <label for="soccupation" class="label-title">Spouse Occupation </label>
+        <input type="text" id="soccupation" class="form-input" name="soccupation" placeholder="Enter your Spouse occupation" required="required" />
+
+    </div>
+</div>
+    <!--Native village and Residing village-->
+    <div class="horizontal-group">
+        <div class="form-group left">
+            <label for="nativevillage" class="label-title">Native Village *</label>
+            <input type="text" id="nativevillage" class="form-input" name="nativevillage" placeholder="enter your Native Village" required="required" />
+        </div>
+        <div class="form-group right">
+            <label for="residingvillage" class="label-title">Residing town/village *</label>
+            <input type="tel" id="residingvillage" class="form-input" name="residingvillage" placeholder="enter your Residing town/village" required="required" />
+        </div>
+    </div>
+
+
+    </div>
+
+<!-- form footer -->
+    <div class="form-footer" align="left">
+     <a href="childrenform.html" type="submit" class="btn" >Submit</a>
+</div>
+<br>
+<br>
+
+    </div>
+
+        </form>
+
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span></span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
