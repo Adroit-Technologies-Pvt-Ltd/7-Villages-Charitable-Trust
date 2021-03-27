@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.gif" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -28,12 +28,15 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Bootslander - v4.0.1
-  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <script>
+
+function pass_validate() {
+  if (document.getElementById('psw').value == 'hello')
+    window.location.href = "admin_page2.html";
+  else
+    alert('Wrong Password!');
+}
+</script>
 </head>
 
 <body>
@@ -43,15 +46,13 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>OAS2</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html">About</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -101,15 +102,12 @@
 			 <form>
         <div class="container">
 
-			<label for="name" class="label-title">Username * &nbsp&nbsp&nbsp</label>
-
-            <input type="text" placeholder="Enter Username" name="username" required>  <br><br><br>
-			<!-- Password field -->
-			<label for="name" class="label-title">Password *    <input type="password" id="myInput"></label><br>
+      <label for="name" class="label-title">Username * <input type="password" placeholder="Enter Username" name="psw" id="psw" required="required"></label><br><br><br>
+          <!-- Password field -->
+			<label for="name" class="label-title">Password * <input type="password" placeholder="Enter Password" name="psw" id="psw" required="required"></label><br>
 			<!-- An element to toggle between password visibility --><br>
-			<input type="checkbox" onclick="myFunction()">   Show Password
-            <br><br>
-            <button type="submit" class='btn'>Login</button>   <br>
+			<br><br>
+            <button type="button" class='btn' onclick="pass_validate()">Login</button> <br>
 
         </div>
     </form>

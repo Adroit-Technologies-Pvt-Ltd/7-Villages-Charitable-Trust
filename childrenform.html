@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Forms</title>
+  <title>ChildrenForms</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.gif" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -28,12 +28,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Bootslander - v4.0.1
-  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -43,15 +37,12 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>OAS2</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
+        <h1><a href="index.html"><span>7  VILLAGES CHARITABLE TRUST</span></a></h1>
+          </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html">About</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -66,11 +57,7 @@
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1> <span>Enter your Personal Details</span></h1>
-            <!--<div class="text-center text-lg-start">
-              <a href="#about" class="btn-get-started scrollto">User</a>
-			  <a href="#about" class="btn-get-started scrollto">Admin</a>
-            </div>-->
+            <h1> <span>Enter your Children Details</span></h1>
           </div>
         </div>
         <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
@@ -96,6 +83,7 @@
 
   </section><!-- End Hero -->
     <!-- form header -->
+    <form action="admin_children.php" method="post">
     <div class="form-header">
     </div>
     <!-- form body -->
@@ -140,9 +128,9 @@
     <div class="form-group left">
         <label class="label-title">Gender:</label>
         <div class="input-group">
-            <label for="male"> <input type="radio" name="gender" value="male" id="male" /> Male</label>
-            <label for="female"> <input type="radio" name="gender" value="female" id="female" /> Female</label>
-            <label for="Others"> <input type="radio" name="gender" value="others" id="others" /> Others</label>
+            <label for="male" class="radio"> <input type="radio" name="gender" value="male" id="male" /> Male</label>
+            <label for="female" class="radio"> <input type="radio" name="gender" value="female" id="female" /> Female</label>
+            <label for="Others" class="radio"> <input type="radio" name="gender" value="others" id="others" /> Others</label>
         </div>
     </div>
 
@@ -182,16 +170,57 @@
             <label for="nameoforg" class="label-title">Name of Organization*</label>
             <input type="text" id="nameoforg" class="form-input" name="nameoforg" placeholder="Enter the name of organisation" required="required" />
         </div>
+<!-- Gender and Adhar Number -->
 
+
+<div class="horizontal-group">
+    <div class="form-group left">
+	 <label class="label-title">Father's Adhar number</label>
+        <input type="text" id="fadharnumber" class="form-input" name="fadharnumber" placeholder="Enter your Adhar Number" />
+
+        </div>
+
+    <div class="form-group right">
+      <label class="label-title">Do you have Insurance? *</label>
+      <div class="input group">
+          <label for="yes" class="radio"><input type="radio" name="option" value="yes" id="yes" >Yes</input></label>
+            <label for="no" class="radio"><input type="radio" name="option" value="no" id="no" >No</input></label>
+         </div>
+    </div>
+</div>
+
+<label class="label-title">If you have Insurance</label>
+<br></br>
+<div class="horizontal-group">
+    <div class="form-group left">
+        <label for="IFSC code" class="label-title"> IFSC code</label>
+        <input type="text" id="IFSC code" class="form-input" name="IFSC code" placeholder="enter the IFSC code" />
+    </div>
+    <div class="form-group right">
+        <label for="Bank acc number" class="label-title"> Bank Account Number</label>
+        <input type="number" id="Bank acc number" class="form-input" name="Bank acc number" placeholder="enter the account number" />
+    </div>
+</div>
+
+<div class="horizontal-group">
+    <div class="form-group left">
+        <label for="Bank name" class="label-title"> Bank Name</label>
+        <input type="text" id="Bank name" class="form-input" name="Bank name" placeholder="enter the bank name"></input>
+    </div>
+    <div class="form-group right">
+        <label for="Insurance name" class="label-title"> Insurance Name</label>
+        <input type="text" id="Insurance name" class="form-input" name="Insurance name" placeholder="enter the insurance name" />
+    </div>
+</div>
 
 		</div>
     </div>
 
+
+
 <!-- form footer -->
     <div class="form-footer" align="left">
-    <span>* required</span>
-    <button type="submit" class="btn">Submit</button>
-	<button type="submit" class="btn">Click here if u have another child</button>
+    <button type="submit" class="btn1">Submit</button>
 </div>
 <br>
 <br>
