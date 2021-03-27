@@ -1,3 +1,23 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydb";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+$qry = 'select * from form';
+
+$allUserStatement = mysqli_prepare($conn,$qry);
+
+mysqli_stmt_execute($allUserStatement);
+
+$getResult = mysqli_stmt_get_result($allUserStatement);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +25,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Index</title>
+  <title>Admin-Retrive</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,12 +58,13 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span></span></a></h1>
+	  <h1><a href="index.html"><span>OAS2</span></a></h1>
+
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -58,12 +79,9 @@
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>7 VILLAGES CHARITABLE TRUST</h1>
+            <h1>Hello <span>Admin</span></h1>
+			     <h2>Parent's Detail</h2>
 
-            <div class="text-center text-lg-start">
-              <a href="form.html" class="btn-get-started scrollto">User</a>
-			  <a href="admin.html" class="btn-get-started scrollto">Admin</a>
-            </div>
           </div>
         </div>
         <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
@@ -88,88 +106,61 @@
     </svg>
 
   </section><!-- End Hero -->
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container">
-
-        <div class="row" data-aos="fade-up">
-
-          <div class="col-md-4">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
-              <p><b>Villages</b></p>
-            </div>
-          </div>
-<br><br><br>
-          <div class=" col-md-4 ">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>
-              <p><b>Families</b></p>
-
-            </div>
-          </div>
-<br><br><br>
-          <div class=" col-md-4">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1" class="purecounter"></span>
-              <p><b>Total Population</b></p>
-
-            </div>
-          </div>
-<br><br><br>
-        </div>
-
-      </div>
-    </section><!-- End Counts Section -->
-
-<section id="tooper">
-
-  <div class="row">
-
-    <div class="col-lg-4 col-md-6 ">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><b>Rank: </b></h5>
-          <p>Name: </p>
-          <p>Mark: </p>
-          <p>School Name: </p>
-          <p>Year: </p>
-        </div>
-      </div>
-      </div>
-<br><br><br>
-      <div class="col-lg-4 col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><b>Rank: </b></h5>
-            <p>Name: </p>
-            <p>Mark: </p>
-            <p>School Name: </p>
-            <p>Year: </p>
-          </div>
-        </div>
-        </div>
-<br><br><br>
-        <div class="col-lg-4 col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><b>Rank: </b></h5>
-              <p>Name: </p>
-              <p>Mark: </p>
-              <p>School Name: </p>
-              <p>Year: </p>
-            </div>
-          </div>
-          </div>
-<br><br><br>
-
+  <div style="overflow-x:auto;">
+ <br>
+ <br>
+ <div class="scrollmenu">
+  <table>
+            <tr>
+                <th>NAME</th>
+                <th>PHONE NUMBER</th>
+                <th>DOB</th>
+                <th>BLOOD GROUP</th>
+                <th>QUALIFICATION</th>
+                <th>OCCUPATION</th>
+                <th>GENDER</th>
+                <th>ADHAR NUMBER</th>
+                <th>FATHER NAME</th>
+                <th>MOTHER NAME</th>
+                <th>SPOUSE NAME</th>
+                <th>SPOUSE QUALIFICATION</th>
+                <th>SPOUSE OCCUPATION</th>
+                <th>NATIVE VILLAGE</th>
+                <th>RESIDING VILLAGE</th>
+            </tr>
+            <?php
+                while($rows = mysqli_fetch_assoc($getResult))
+                {
+             ?>
+            <tr>
+                <td><?php echo $rows['name'];?></td>
+                <td><?php echo $rows['phonenumber'];?></td>
+                <td><?php echo $rows['dob'];?></td>
+                <td><?php echo $rows['bloodgroup'];?></td>
+                <td><?php echo $rows['qualification'];?></td>
+                <td><?php echo $rows['occupation'];?></td>
+                <td><?php echo $rows['gender'];?></td>
+                <td><?php echo $rows['adharnumber'];?></td>
+                <td><?php echo $rows['fathersname'];?></td>
+                <td><?php echo $rows['mothersname'];?></td>
+                <td><?php echo $rows['spousename'];?></td>
+                <td><?php echo $rows['squalification'];?></td>
+                <td><?php echo $rows['soccupation'];?></td>
+                <td><?php echo $rows['nativevillage'];?></td>
+                <td><?php echo $rows['residingvillage'];?></td>
+            </tr>
+            <?php
+                }
+             ?>
+  </table>
+  <br>
+  <br>
   </div>
-</section>  </main><!-- End #main -->
+</div>
 
+<br>
+<br>
+<br>
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
