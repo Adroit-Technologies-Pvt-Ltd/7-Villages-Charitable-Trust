@@ -2,7 +2,6 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "mydb";
 $fname = $_POST['childfirstname'];
 $lname = $_POST['childlastname'];
 $dob = $_POST['dob'];
@@ -12,8 +11,22 @@ $adharnumber = $_POST['adharnumber'];
 $qualification = $_POST['qualification'];
 $nameoforg = $_POST['nameoforg'];
 $fadharnumber = $_POST['fadharnumber'];
+$option = $_POST['option'];
+$IFSCcode = $_POST['IFSCcode'];
+$accnumber = $_POST['accnumber'];
+$Bankname = $_POST['Bankname'];
+$Insurancename = $_POST['insurance'];
 
-$conn = mysqli_connect($servername, $username, $password,$dbname);
+$conn = mysqli_connect($servername, $username, $password);
+$sql = "CREATE DATABASE mydb";
+
+if ($conn->query($sql) === TRUE) {
+  echo "";
+} else {
+  echo "";
+}
+
+mysqli_select_db($conn, 'mydb');
 $sql = "CREATE TABLE child (
 firstname VARCHAR(15) NOT NULL,
 lastname VARCHAR(15) NOT NULL,
@@ -23,7 +36,12 @@ gender VARCHAR(15) NOT NULL,
 adharnumber VARCHAR(15) NOT NULL,
 qualification VARCHAR(15) NOT NULL,
 nameoforg VARCHAR(15) NOT NULL,
-fadharnumber VARCHAR(15) NOT NULL
+fadharnumber VARCHAR(15) NOT NULL,
+options VARCHAR(3) NOT NULL,
+IFSCcode VARCHAR(15)  ,
+accnumber VARCHAR(15) ,
+Bankname VARCHAR(15) ,
+Insurancename VARCHAR(15)
 )";
 
 if ($conn->query($sql) === TRUE) {
@@ -32,15 +50,14 @@ if ($conn->query($sql) === TRUE) {
   echo "" ;
 }
 
-mysqli_select_db($conn, 'mydb');
-$sql = "INSERT INTO child(firstname,lastname,dob,bloodgroup,gender,adharnumber,qualification,nameoforg,fadharnumber)
-        VALUES (?,?,?,?,?,?,?,?,?)";
+$sql = "INSERT INTO child (firstname,lastname,dob,bloodgroup,gender,adharnumber,qualification,nameoforg,fadharnumber,options,IFSCcode,accnumber,Bankname,Insurancename)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-$insertStatement = mysqli_prepare($conn,$sql);
+$stmt = mysqli_prepare($conn,$sql);
 
-mysqli_stmt_bind_param($insertStatement,'sssssssss',$fname,$lname,$dob,$bloodgroup,$gender,$adharnumber,$qualification,$nameoforg,$fadharnumber);
+mysqli_stmt_bind_param($stmt,'ssssssssssssss',$fname,$lname,$dob,$bloodgroup,$gender,$adharnumber,$qualification,$nameoforg,$fadharnumber,$option,$IFSCcode,$accnumber,$Bankname,$Insurancename);
 
-mysqli_stmt_execute($insertStatement);
+mysqli_stmt_execute($stmt);
 
 mysqli_close($conn);
 
@@ -53,7 +70,7 @@ mysqli_close($conn);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Resgistation Successful-Do u Have  Child</title>
+  <title>Resgistation Successful-Do u Have Child</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -86,13 +103,13 @@ mysqli_close($conn);
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>OAS2</span></a></h1>
+        <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
         </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-
+  <li><a class="nav-link scrollto active" href="childrenform.html">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -107,7 +124,7 @@ mysqli_close($conn);
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1> <span>Registered Successful</span></h1>
+            <h1> <span>Registered Successfully</span></h1>
 
           </div>
         </div>

@@ -60,7 +60,7 @@ $getResult = mysqli_stmt_get_result($allUserStatement);
       <div class="logo">
 	  <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-        <h1><a href="index.html"><span>OAS2</span></a></h1>
+        <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
 
       </div>
 
@@ -124,6 +124,12 @@ $getResult = mysqli_stmt_get_result($allUserStatement);
                 <th>QUALIFICATION</th>
                 <th>NAME OF ORGANISATION</th>
                 <th>FATHER'S ADHAR NUMBER</th>
+                <th>INSURANCE</th>
+                <th>IFSC CODE</th>
+                <th>ACCOUNT NUMBER</th>
+                <th>BANK NAME</th>
+                <th>INSURANCE NAME</th>
+
             </tr>
             <?php
                 while($rows = mysqli_fetch_assoc($getResult))
@@ -139,6 +145,11 @@ $getResult = mysqli_stmt_get_result($allUserStatement);
                 <td><?php echo $rows['qualification'];?></td>
                 <td><?php echo $rows['nameoforg'];?></td>
                 <td><?php echo $rows['fadharnumber'];?></td>
+                <td><?php echo $rows['options'];?></td>
+                <td><?php echo $rows['IFSCcode'];?></td>
+                <td><?php echo $rows['accnumber'];?></td>
+                <td><?php echo $rows['Bankname'];?></td>
+                <td><?php echo $rows['Insurancename'];?></td>
             </tr>
             <?php
                 }
