@@ -25,7 +25,7 @@ $getResult = mysqli_stmt_get_result($allUserStatement);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin-Retrive</title>
+  <title>Toppers</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -58,8 +58,7 @@ $getResult = mysqli_stmt_get_result($allUserStatement);
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-	  <h1><a href="index.html"><span>OAS2</span></a></h1>
-
+        <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -79,9 +78,7 @@ $getResult = mysqli_stmt_get_result($allUserStatement);
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>Hello <span>Admin</span></h1>
-			     <h2>Parent's Detail</h2>
-
+            <h1>TOPPERS DETAILS</h1>
           </div>
         </div>
         <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
@@ -106,35 +103,33 @@ $getResult = mysqli_stmt_get_result($allUserStatement);
     </svg>
 
   </section><!-- End Hero -->
-  <div style="overflow-x:auto;">
- <br>
- <br>
- <div class="scrollmenu">
-  <table>
-            <tr>
-                <th>NAME</th>
-                <th>PICTURE</th>
-            </tr>
-            <?php
-                while($rows = mysqli_fetch_assoc($getResult))
-                {
-             ?>
-            <tr>
-                <td><?php echo $rows['fname'];?></td>
-                <td><?php echo $rows['picture'];?></td>
-            </tr>
-            <?php
+  <!-- ======= Counts Section ======= -->
+<section id="tooper">
+  <div class="row">
+
+  <?php
+  while($rows = mysqli_fetch_assoc($getResult))
+  {
+  ?>
+    <div class="col-lg-4 col-md-6 ">
+    <br>
+<br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><b>Rank: <?php echo $rows['ranks'];?></b></h5>
+          <p><b>Name:</b> <?php echo $rows['fname'];?></p>
+          <p><b>Mark:</b> <?php echo $rows['mark'];?></p>
+          <p><b>School Name:</b> <?php echo $rows['school'];?></p>
+          <p><b>Year: </b><?php echo $rows['years'];?></p>
+        </div>
+      </div>
+      </div>
+      <?php
                 }
              ?>
-  </table>
-  <br>
-  <br>
   </div>
-</div>
+</section>  </main><!-- End #main -->
 
-<br>
-<br>
-<br>
   <!-- ======= Footer ======= -->
   <footer id="footer">
 

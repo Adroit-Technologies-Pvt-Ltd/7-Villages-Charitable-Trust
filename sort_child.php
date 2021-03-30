@@ -1,3 +1,44 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydb";
+$sort = $_POST['sort'];
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+if ($sort == 'firstname') {
+    $qry = 'select * from child order by firstname ASC';
+  }
+elseif($sort == 'dob') {
+    $qry = 'select * from child order by dob ASC';
+  }
+  elseif($sort == 'fadharnumber') {
+    $qry = 'select * from child order by fadharnumber ASC';
+  }
+  elseif($sort == 'lastname') {
+    $qry = 'select * from child order by lastname ASC';
+  }
+  elseif($sort == 'options') {
+    $qry = 'select * from child order by options ASC';
+  }
+  elseif($sort == 'accnumber') {
+    $qry = 'select * from child order by accnumber ASC';
+  }
+  elseif($sort == 'IFSCcode') {
+    $qry = 'select * from child order by IFSCcode ASC';
+  }
+$allUserStatement = mysqli_prepare($conn,$qry);
+
+mysqli_stmt_execute($allUserStatement);
+
+$getResult = mysqli_stmt_get_result($allUserStatement);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +46,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin-Main</title>
+  <title>Admin-Retrive</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,20 +72,21 @@
 
 </head>
 
-<body bgcolor="white">
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
-          </div>
+	  <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
+
+      </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-  <li><a class="nav-link scrollto active" href="serach_choice.html">Back</a></li>
+            <li><a class="nav-link scrollto active" href="sort_child.html">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -59,7 +101,7 @@
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1> <span>Hello Admin</span></h1>
+            <h1>Sorted<span>Results</span></h1>
 
           </div>
         </div>
@@ -85,20 +127,57 @@
     </svg>
 
   </section><!-- End Hero -->
+  <div style="overflow-x:auto;">
+ <br>
+ <br>
+ <div class="scrollmenu">
+  <table>
+  <tr>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>DOB</th>
+                <th>BLOOD GROUP</th>
+                <th>GENDER</th>
+                <th>ADHAR NUMBER</th>
+                <th>QUALIFICATION</th>
+                <th>NAME OF ORGANISATION</th>
+                <th>FATHER'S ADHAR NUMBER</th>
+                <th>INSURANCE</th>
+                <th>IFSC CODE</th>
+                <th>ACCOUNT NUMBER</th>
+                <th>BANK NAME</th>
+                <th>INSURANCE NAME</th>
 
-
-<br>
-<br>
- <div class="form-footer" align="center">
-<a href="search.html"><button class="btnchild">SEARCH</button></a>
+            </tr>
+            <?php
+                while($rows = mysqli_fetch_assoc($getResult))
+                {
+             ?>
+            <tr>
+                <td><?php echo $rows['firstname'];?></td>
+                <td><?php echo $rows['lastname'];?></td>
+                <td><?php echo $rows['dob'];?></td>
+                <td><?php echo $rows['bloodgroup'];?></td>
+                <td><?php echo $rows['gender'];?></td>
+                <td><?php echo $rows['adharnumber'];?></td>
+                <td><?php echo $rows['qualification'];?></td>
+                <td><?php echo $rows['nameoforg'];?></td>
+                <td><?php echo $rows['fadharnumber'];?></td>
+                <td><?php echo $rows['options'];?></td>
+                <td><?php echo $rows['IFSCcode'];?></td>
+                <td><?php echo $rows['accnumber'];?></td>
+                <td><?php echo $rows['Bankname'];?></td>
+                <td><?php echo $rows['Insurancename'];?></td>
+            </tr>
+            <?php
+                }
+             ?>
+  </table>
+  <br>
+  <br>
+  </div>
 </div>
-<br>
-<div class="form-footer" align="center">
-<a href="sort.html" ><button class="btnchild">SORT</button></a>
 
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>

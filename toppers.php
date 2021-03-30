@@ -2,14 +2,28 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "mydb";
-$fname = $_POST['name'];
-$picture = $_POST['picture'];
+$fname = $_POST['fname'];
+$mark = $_POST['mark'];
+$school = $_POST['school'];
+$years = $_POST['years'];
+$ranks = $_POST['ranks'];
 
-$conn = mysqli_connect($servername, $username, $password,$dbname);
+$conn = mysqli_connect($servername, $username, $password);
+$sql = "CREATE DATABASE mydb";
+
+if ($conn->query($sql) === TRUE) {
+  echo "";
+} else {
+  echo "";
+}
+
+mysqli_select_db($conn, 'mydb');
 $sql = "CREATE TABLE toppers (
 fname VARCHAR(15) NOT NULL,
-picture LONGBLOB NOT NULL
+mark VARCHAR(15) NOT NULL,
+school VARCHAR(25) NOT NULL,
+years VARCHAR(15) NOT NULL,
+ranks VARCHAR(10) NOT NULL
 )";
 
 if ($conn->query($sql) === TRUE) {
@@ -18,15 +32,14 @@ if ($conn->query($sql) === TRUE) {
   echo "" ;
 }
 
-mysqli_select_db($conn, 'mydb');
-$sql = "INSERT INTO toppers(fname,picture)
-        VALUES (?,?)";
+$sql = "INSERT INTO toppers(fname,mark,school,years,ranks)
+        VALUES (?,?,?,?,?)";
 
-$insertStatement = mysqli_prepare($conn,$sql);
+$stmt = mysqli_prepare($conn,$sql);
 
-mysqli_stmt_bind_param($insertStatement,'ss',$fname,$picture);
+mysqli_stmt_bind_param($stmt,'sssss',$fname,$mark,$school,$years,$ranks);
 
-mysqli_stmt_execute($insertStatement);
+mysqli_stmt_execute($stmt);
 
 mysqli_close($conn);
 
@@ -39,7 +52,7 @@ mysqli_close($conn);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Resgistation Successful-Do u Have  Child</title>
+  <title>Resgistation Successful-Do u Have Child</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -72,13 +85,13 @@ mysqli_close($conn);
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>OAS2</span></a></h1>
+        <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
         </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-
+  <li><a class="nav-link scrollto active" href="toppers.html">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -122,12 +135,12 @@ mysqli_close($conn);
 
 <br>
 <br>
- <div class="form-footer" align="left">
-<a href="toppers.html"><button class="btnchild">CLICK HERE IF YOU HAVE ANOTHER RECORD</button></a>
+<div class="form-footer" align="right">
+<a href="searchsort.html" ><button class="btnchild">CLICK HERE FOR ANOTHER RECORD</button></a>
 </div>
 <br>
-<div class="form-footer" align="right">
-<a href="index.html" ><button class="btnchild">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEXIT&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button></a>
+<div class="form-footer" align="center">
+<a href="index.html" ><button class="btnchild">EXIT</button></a>
 
 </div>
 

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin-Main</title>
+  <title>Forms</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,7 +31,7 @@
 
 </head>
 
-<body bgcolor="white">
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -39,12 +39,12 @@
 
       <div class="logo">
         <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
-          </div>
+        </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-  <li><a class="nav-link scrollto active" href="serach_choice.html">Back</a></li>
+            <li><a class="nav-link scrollto active" href="searchsort1.html">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -59,7 +59,7 @@
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1> <span>Hello Admin</span></h1>
+            <h1> <span>Sort</span></h1>
 
           </div>
         </div>
@@ -85,23 +85,50 @@
     </svg>
 
   </section><!-- End Hero -->
+    <!-- form header -->
+    <form action="sort_child.php" method="post">
+    <div class="form-header">
+    </div>
+    <!-- form body -->
+    <div class="form-body">
+    <!-- Name and Phnnumber -->
+
+    <div class="horizontal-group">
+        <div class="form-group left">
+            <label for="sort" class="label-title">Sort By: </label>
+            <select id="sort" class="form-input" name="sort" placeholder="Select your Qualification" required="required">
+                <option value="firstname">first name</option>
+                <option value="lastname">last name</option>
+                <option value="dob">date of birth</option>
+                <option value="fadharnumber">father adhar number</option>
+                <option value="options">Insurance</option>
+                <option value="accnumber">account number</option>
+                <option value="IFSCcode">IFSC code</option>
+       </select>
+        </div>
+    </div>
 
 
-<br>
-<br>
- <div class="form-footer" align="center">
-<a href="search.html"><button class="btnchild">SEARCH</button></a>
+<!-- form footer -->
+    <div class="form-footer" align="left">
+    <button type="submit" class="btn">Submit</button>
 </div>
 <br>
-<div class="form-footer" align="center">
-<a href="sort.html" ><button class="btnchild">SORT</button></a>
+<br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    </div>
+
+        </form>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
