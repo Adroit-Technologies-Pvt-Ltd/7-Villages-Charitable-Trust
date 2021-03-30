@@ -43,6 +43,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+            <li><a class="nav-link scrollto active" href="action.php">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -194,23 +195,23 @@
 <div class="horizontal-group">
     <div class="form-group left">
         <label for="IFSC code" class="label-title"> IFSC code</label>
-        <input type="text" id="IFSC code" class="form-input" name="IFSC code" placeholder="enter the IFSC code" />
+        <input type="text" id="IFSCcode" class="form-input" name="IFSCcode" placeholder="enter the IFSC code" default="NIL"/>
     </div>
     <div class="form-group right">
         <label for="Bank acc number" class="label-title"> Bank Account Number</label>
-        <input type="number" id="Bank acc number" class="form-input" name="Bank acc number" placeholder="enter the account number" />
+        <input type="number" id="accnumber" class="form-input" name="accnumber" placeholder="enter the account number" />
     </div>
 </div>
 
 <div class="horizontal-group">
     <div class="form-group left">
         <label for="Bank name" class="label-title"> Bank Name</label>
-        <input type="text" id="Bank name" class="form-input" name="Bank name" placeholder="enter the bank name"></input>
+        <input type="text" id="Bankname" class="form-input" name="Bankname" placeholder="enter the bank name">
     </div>
     <div class="form-group right">
-        <label for="Insurance name" class="label-title"> Insurance Name</label>
-        <input type="text" id="Insurance name" class="form-input" name="Insurance name" placeholder="enter the insurance name" />
-    </div>
+      <label for="insurance" class="label-title"> Insurance Name</label>
+      <input type="text" id="insurance" class="form-input" name="insurance" placeholder="enter insurance name" />
+  </div>
 </div>
 
 		</div>

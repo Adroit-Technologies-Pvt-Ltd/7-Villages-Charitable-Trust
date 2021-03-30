@@ -55,11 +55,11 @@ if ($conn->query($sql) === TRUE) {
 $sql = "INSERT INTO form(name,phonenumber,dob,bloodgroup,qualification,occupation,gender,adharnumber,fathersname,mothersname,spousename,squalification,soccupation,nativevillage,residingvillage)
         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-$insertStatement = mysqli_prepare($conn,$sql);
+$stmt = mysqli_prepare($conn,$sql);
 
-mysqli_stmt_bind_param($insertStatement,'sssssssssssssss',$name,$phonenumber,$dob,$bloodgroup,$qualification,$occupation,$gender,$adharnumber,$fathersname,$mothersname,$spousename,$squalification,$soccupation,$nativevillage,$residingvillage);
+mysqli_stmt_bind_param($stmt,'sssssssssssssss',$name,$phonenumber,$dob,$bloodgroup,$qualification,$occupation,$gender,$adharnumber,$fathersname,$mothersname,$spousename,$squalification,$soccupation,$nativevillage,$residingvillage);
 
-mysqli_stmt_execute($insertStatement);
+mysqli_stmt_execute($stmt);
 
 mysqli_close($conn);
 
@@ -73,7 +73,7 @@ mysqli_close($conn);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Resgistation Successful-Do u Have  Child</title>
+  <title>Resgistation Successful-Do u Have Child</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -106,12 +106,13 @@ mysqli_close($conn);
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>OAS2</span></a></h1>
+        <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
         </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>\
+          <li><a class="nav-link scrollto active" href="Form.html">Back</a></li>
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -167,7 +168,10 @@ mysqli_close($conn);
 <a href="index.html" ><button class="btnchild">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEXIT&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button></a>
 
 </div>
-
+<br>
+<br>
+<br>
+<br>
 
 
 

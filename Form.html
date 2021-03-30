@@ -44,6 +44,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+            <li><a class="nav-link scrollto active" href="index.html">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -120,6 +121,7 @@
         <option value="B-">B-</option>
         <option value="O+">O+</option>
         <option value="O-">O-</option>
+        <option value="Nil" selected>NIL</option>
   </select>
     </div>
 </div>
@@ -134,7 +136,7 @@
     <option value="Higher Secondary School">Higher Secondary School(12th)</option>
     <option value="Bachelors degree">Bachelors degree</option>
     <option value="Masters degree">Masters degree</option>
-    <option value="Nil">NIL</option>
+    <option value="Nil" selected>NIL</option>
   </select>
     </div>
     <div class="form-group right">
@@ -177,7 +179,16 @@
     <div class="horizontal-group">
         <div class="form-group left">
             <label for="nativevillage" class="label-title">Native Village *</label>
-            <input type="text" id="nativevillage" class="form-input" name="nativevillage" placeholder="enter your Native Village" required="required" />
+            <select id="nativevillage" class="form-input" name="nativevillage" placeholder="choose your village">
+              <option value="Vellagoundanpatti">Vellagoundanpatti</option>
+              <option value="Naranapuram-Subbaiahpuram ">Naranapuram - Subbaiahpuram </option>
+              <option value="Karadikulam">Karadikulam</option>
+              <option value="Punnaivanam">Punnaivanam</option>
+              <option value="KVAlankulam">KV Alankulam</option>
+              <option value="Avudayalpuram">Avudayalpuram</option>
+              <option value="Poigai">Poigai</option>
+              <option value="NIL" selected>NIL</option>
+        </select>
         </div>
         <div class="form-group right">
             <label for="residingvillage" class="label-title">Residing town/village *</label>
@@ -207,7 +218,7 @@
     <option value="Higher Secondary School">Higher Secondary School(12th)</option>
     <option value="Bachelors degree">Bachelors degree</option>
     <option value="Masters degree">Masters degree</option>
-    <option value="Nil">NIL</option>
+    <option value="Nil" selected>NIL</option>
   </select>
     </div>
     <div class="form-group right">

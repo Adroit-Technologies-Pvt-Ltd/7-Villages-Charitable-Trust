@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin-Main</title>
+  <title>Forms</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,7 +31,7 @@
 
 </head>
 
-<body bgcolor="white">
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -44,7 +44,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto active" href="admin.html">Back</a></li>
+            <li><a class="nav-link scrollto active" href="admin_page2.html">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -59,7 +59,7 @@
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1><span>Hello Admin!</span></h1>
+            <h1> <span>Enter Toppers Details</span></h1>
 
           </div>
         </div>
@@ -85,30 +85,58 @@
     </svg>
 
   </section><!-- End Hero -->
+    <!-- form header -->
+    <form action="toppers.php" method="post">
+    <div class="form-header">
+    </div>
+    <!-- form body -->
+    <div class="form-body">
+    <!-- Name and Phnnumber -->
 
-<br>
-<br>
- <div class="form-footer" align="right">
-<a href="adminretreive.php"><button class="btnchild ">PARENT'S DETAILS</button></a>
+
+    <div class="horizontal-group">
+        <div class="form-group left">
+            <label for="fname" class="label-title">Name *</label>
+            <input type="text" id="fname" class="form-input" name="fname" placeholder="enter toppers name" required="required" />
+        </div>
+        <div class="form-group right">
+            <label for="mark" class="label-title">mark *</label>
+            <input type="text" id="mark" class="form-input" name="mark" placeholder="enter marks scored" required="required" />
+        </div>
+    </div>
+     <div class="horizontal-group">
+        <div class="form-group left">
+            <label for="ranks" class="label-title">Rank *</label>
+            <input type="text" id="ranks" class="form-input" name="ranks" placeholder="enter Rank" required="required" />
+        </div>
+        <div class="form-group right">
+            <label for="school" class="label-title">School *</label>
+            <input type="text" id="school" class="form-input" name="school" placeholder="enter school name" required="required" />
+        </div>
+    </div>
+    <div class="horizontal-group">
+      <div class="form-group left">
+          <label for="years" class="label-title">Year *</label>
+          <input type="text" id="years" class="form-input" name="years" placeholder="enter year" required="required" />
+      </div>
+      </div>
+
+
+<!-- form footer -->
+    <div class="form-footer" align="left">
+    <button type="submit" class="btn">Submit</button>
 </div>
 <br>
-<div class="form-footer" align="right">
-<a href="children.php" ><button class="btnchild">CHILDREN DETAILS</button></a>
+<br>
 
-</div>
+    </div>
+
+        </form>
 
 <br>
-<div class="form-footer" align="right">
-<a href="serach_choice.html" ><button class="btnchild ">SEARCH AND SORT</button></a>
+<br>
+<br>
 
-</div>
-<br>
-<div class="form-footer" align="right">
-<a href="toppers.html" ><button class="btnchild rb ">TOPPERS DETAILS</button></a>
-
-</div>
-<br>
-<br>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">

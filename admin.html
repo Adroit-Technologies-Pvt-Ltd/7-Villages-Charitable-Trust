@@ -52,6 +52,7 @@ function pass_validate() {
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto active" href="index.html">Back</a></li>
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -102,14 +103,17 @@ function pass_validate() {
 			 <form>
         <div class="container">
 
-      <label for="name" class="label-title">Username * <input type="password" placeholder="Enter Username" name="psw" id="psw" required="required"></label><br><br><br>
-          <!-- Password field -->
-			<label for="name" class="label-title">Password * <input type="password" placeholder="Enter Password" name="psw" id="psw" required="required"></label><br>
-			<!-- An element to toggle between password visibility --><br>
-			<br><br>
-            <button type="button" class='btn' onclick="pass_validate()">Login</button> <br>
+          <label for="name" class="label-title">Username * </label>
 
-        </div>
+                <input type="text" placeholder="Enter Username" name="username" required="required">  <br><br><br>
+          <!-- Password field -->
+          <label for="name" class="label-title">Password * <input type="password" placeholder="Enter Password" name="psw" id="psw" required="required"></label><br>
+          <!-- An element to toggle between password visibility --><br>
+          <!-- <input type="checkbox" onclick="myFunction()">   Show Password -->
+                <br><br>
+                <button type="button" class='btn' onclick="pass_validate()">Login</button> <br>
+
+            </div>
     </form>
 			  <br>
 <br>

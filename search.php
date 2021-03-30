@@ -75,13 +75,14 @@ $getResult = mysqli_stmt_get_result($stmt);
       <div class="logo">
 	  <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-        <h1><a href="index.html"><span>OAS2</span></a></h1>
+        <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
 
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+            <li><a class="nav-link scrollto active" href="search.html">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>

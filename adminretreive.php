@@ -58,13 +58,14 @@ $getResult = mysqli_stmt_get_result($allUserStatement);
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-	  <h1><a href="index.html"><span>OAS2</span></a></h1>
+	  <h1><a href="index.html"><span>7 VILLAGES CHARITABLE TRUST</span></a></h1>
 
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+            <li><a class="nav-link scrollto active" href="admin_page2.html">Back</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
